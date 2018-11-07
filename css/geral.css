@@ -107,9 +107,31 @@ body {background: url("../src/bg-img.jpg");}
     margin: 0 5px;
 }
 
+.pagination a:hover {
+    text-decoration: none;
+    background-color: lightblue;
+    color: mediumslateblue;
+}
+
 @media(max-width: 768px){
     .main-title {
         font-size: 50px;
+    }
+}
+
+@media(max-width: 575px){
+    .results-box ul i {
+        position: absolute;
+        top: 50%;
+        margin-top: -8px;
+    }
+
+    .results-box ul a {
+        position: relative;
+    }
+
+    .results-box ul p {
+        width: 100%;
     }
 }
 
