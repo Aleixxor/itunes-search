@@ -44,6 +44,7 @@ body {background: url("../src/bg-img.jpg");}
 
 .results-box {
     margin-top: 50px;
+    margin-bottom: 50px;
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: #cecece 0px 0px 15px;
@@ -62,6 +63,10 @@ body {background: url("../src/bg-img.jpg");}
 
 .results-box ul li {
     border-bottom: 1px solid #cccccc;
+}
+
+.results-box ul li:last-child {
+    border: none;
 }
 
 .results-box ul li:hover p {
