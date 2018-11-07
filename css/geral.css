@@ -1,7 +1,7 @@
 .f-left {float: left}
 .clear {clear: both;}
 
-body {background-image: url("../src/bg-img.jpg")}
+body {background: url("../src/bg-img.jpg");}
 .main-title {
     text-align: center;
     margin-bottom: 50px;
@@ -83,6 +83,28 @@ body {background-image: url("../src/bg-img.jpg")}
 .results-box ul a {
     padding: 10px 15px;
     display: block;
+}
+
+.pagination {
+    margin: 25px auto 0;
+}
+
+.pagination > div {
+    display: table;
+    margin: 0 auto;
+}
+
+.pagination a {
+    display: block;
+    color: #ffffff;
+    background-color: mediumslateblue;
+    border-radius: 25px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    float: left;
+    margin: 0 5px;
 }
 
 @media(max-width: 768px){
