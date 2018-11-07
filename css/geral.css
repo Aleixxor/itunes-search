@@ -58,7 +58,14 @@ body {background: url("../src/bg-img.jpg");}
 }
 
 .results-box ul a {
-    color: #212529;
+	position: relative;
+	color: #212529;
+}
+
+.results-box ul i {
+	position: absolute;
+	top: 50%;
+	margin-top: -8px;
 }
 
 .results-box ul li {
@@ -75,7 +82,6 @@ body {background: url("../src/bg-img.jpg");}
 
 .results-box ul i {
     color: mediumslateblue;
-    margin-top: 3px;
 }
 
 .results-box ul p {
@@ -125,16 +131,6 @@ body {background: url("../src/bg-img.jpg");}
 }
 
 @media(max-width: 575px){
-    .results-box ul i {
-        position: absolute;
-        top: 50%;
-        margin-top: -8px;
-    }
-
-    .results-box ul a {
-        position: relative;
-    }
-
     .results-box ul p {
         width: 100%;
     }
