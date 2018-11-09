@@ -27,112 +27,25 @@
 
     </div>
 
-    <div class="container results-box">
-        <ul>
-            <ui-view>
-                <p class="pre-search">
-                    Pesquise por seu música, artista ou álbum favorito!
-                </p>
-            </ui-view>
-            <!-- <li>
-                <a href="">
-                    <i class="fa fa-user f-left"></i>
-                    <p class="song f-left">Grenade</p>
-                    <p class="artist f-left">Bruno Mars</p>
-                    <p class="album f-left">Doo-Wops & Hooligans</p>
-                    <div class="clear"></div>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <i class="fa fa-user f-left"></i>
-                    <p class="song f-left">Grenade</p>
-                    <p class="artist f-left">Bruno Mars</p>
-                    <p class="album f-left">Doo-Wops & Hooligans</p>
-                    <div class="clear"></div>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <i class="fa fa-user f-left"></i>
-                    <p class="song f-left">Grenade</p>
-                    <p class="artist f-left">Bruno Mars</p>
-                    <p class="album f-left">Doo-Wops & Hooligans</p>
-                    <div class="clear"></div>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <i class="fa fa-user f-left"></i>
-                    <p class="song f-left">Grenade</p>
-                    <p class="artist f-left">Bruno Mars</p>
-                    <p class="album f-left">Doo-Wops & Hooligans</p>
-                    <div class="clear"></div>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <i class="fa fa-user f-left"></i>
-                    <p class="song f-left">Grenade</p>
-                    <p class="artist f-left">Bruno Mars</p>
-                    <p class="album f-left">Doo-Wops & Hooligans</p>
-                    <div class="clear"></div>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <i class="fa fa-user f-left"></i>
-                    <p class="song f-left">Grenade</p>
-                    <p class="artist f-left">Bruno Mars</p>
-                    <p class="album f-left">Doo-Wops & Hooligans</p>
-                    <div class="clear"></div>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <i class="fa fa-user f-left"></i>
-                    <p class="song f-left">Grenade</p>
-                    <p class="artist f-left">Bruno Mars</p>
-                    <p class="album f-left">Doo-Wops & Hooligans</p>
-                    <div class="clear"></div>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <i class="fa fa-user f-left"></i>
-                    <p class="song f-left">Grenade</p>
-                    <p class="artist f-left">Bruno Mars</p>
-                    <p class="album f-left">Doo-Wops & Hooligans</p>
-                    <div class="clear"></div>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <i class="fa fa-user f-left"></i>
-                    <p class="song f-left">Grenade</p>
-                    <p class="artist f-left">Bruno Mars</p>
-                    <p class="album f-left">Doo-Wops & Hooligans</p>
-                    <div class="clear"></div>
-                </a>
-            </li>
-            <li>
-                <a href="">
-                    <i class="fa fa-user f-left"></i>
-                    <p class="song f-left">Grenade</p>
-                    <p class="artist f-left">Bruno Mars</p>
-                    <p class="album f-left">Doo-Wops & Hooligans</p>
-                    <div class="clear"></div>
-                </a>
-            </li> -->
-        </ul>
+    <div class="container results-box" ng-controller="itunesSearchCtrl">
+        <ui-view id="finalForm">
+            <p class="pre-search">Pesquise por sua música, artista ou álbum favorito!</p>
+            <ul>
+                <li ng-repeat="musica in result | limitTo:10">
+                    <a href="">
+                        <i class="fa fa-user f-left"></i>
+                        <p class="song f-left">{{musica.musica}}</p>
+                        <p class="artist f-left">{{musica.artista}}</p>
+                        <p class="album f-left">{{musica.album}}</p>
+                        <div class="clear"></div>
+                    </a>
+                </li>
+            </ul>
+        </ui-view>
 
         <div class="pagination">
             <div>
-                <a href=""><</a>
-                <a href="">1</a>
-                <a href="">2</a>
-                <a href="">3</a>
-                <a href="">></a>
+                <a ng-repeat="pagina in paginacao" ng-click="loadResults($index)" href="">{{pagina}}</a>
                 <div class="clear"></div>
             </div>
         </div>
