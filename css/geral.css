@@ -20,18 +20,18 @@ body {background: url("../src/bg-img.jpg");}
     margin: 0 auto;
 }
 
-.input button {
+.input a {
     display: block;
     position: absolute;
     top: 10px;
     right: 15px;
     color: mediumslateblue;
-    background: none;
+    background: #ffffff;
     border: none;
     cursor: pointer;
 }
 
-.input button:hover {
+.input a:hover {
     color: lightblue;
 }
 
@@ -122,6 +122,11 @@ body {background: url("../src/bg-img.jpg");}
     text-decoration: none;
     background-color: lightblue;
     color: mediumslateblue;
+}
+
+.pre-search {
+    text-align: center !important;
+    width: 100% !important;
 }
 
 @media(max-width: 768px){

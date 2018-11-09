@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE>
+<html lang="en" ng-app="itunesSearch">
   <head>
     <meta charset="utf-8">
     <title>iTunes Search</title>
@@ -13,6 +13,7 @@
   <body>
 
     <div class="container main-box">
+        
         <h1 class="main-title">iTunes Search</h1>
 
         <p class="description">O método grátis de busca de músicas mais preciso do mercado!</p>
@@ -21,14 +22,19 @@
             <form action="pesquisa()">
                 <input type="text" class="form-control input-key">
             </form>
-            <button type="submit" class="fa fa-search"></button>
+            <a ui-sref="response" type="submit" class="fa fa-search"></a>
         </div>
 
     </div>
 
     <div class="container results-box">
         <ul>
-            <li>
+            <ui-view>
+                <p class="pre-search">
+                    Pesquise por seu música, artista ou álbum favorito!
+                </p>
+            </ui-view>
+            <!-- <li>
                 <a href="">
                     <i class="fa fa-user f-left"></i>
                     <p class="song f-left">Grenade</p>
@@ -117,7 +123,7 @@
                     <p class="album f-left">Doo-Wops & Hooligans</p>
                     <div class="clear"></div>
                 </a>
-            </li>
+            </li> -->
         </ul>
 
         <div class="pagination">
