@@ -10,7 +10,7 @@
     <link href="../css/geral.css" rel="stylesheet">
 
   </head>
-  <body>
+  <body ng-controller="itunesSearchCtrl">
 
     <div class="container main-box">
         
@@ -19,24 +19,24 @@
         <p class="description">O método grátis de busca de músicas mais preciso do mercado!</p>
         
         <div class="input">
-            <form action="pesquisa()">
-                <input type="text" class="form-control input-key">
+            <form>
+                <input ng-model="input" type="text" class="form-control input-key">
             </form>
-            <a ui-sref="response" type="submit" class="fa fa-search"></a>
+            <a ui-sref="response" type="submit" class="fa fa-search" ng-click="pesquisa()"></a>
         </div>
 
     </div>
 
-    <div class="container results-box" ng-controller="itunesSearchCtrl">
+    <div class="container results-box">
         <ui-view id="finalForm">
             <p class="pre-search">Pesquise por sua música, artista ou álbum favorito!</p>
             <ul>
                 <li ng-repeat="musica in result | limitTo:10">
                     <a href="">
                         <i class="fa fa-user f-left"></i>
-                        <p class="song f-left">{{musica.musica}}</p>
-                        <p class="artist f-left">{{musica.artista}}</p>
-                        <p class="album f-left">{{musica.album}}</p>
+                        <p class="song f-left">{{musica.trackName}}</p>
+                        <p class="artist f-left">{{musica.artistName}}</p>
+                        <p class="album f-left">{{musica.collectionName}}</p>
                         <div class="clear"></div>
                     </a>
                 </li>
@@ -49,7 +49,6 @@
                 <div class="clear"></div>
             </div>
         </div>
-
     </div>
 
     <!-- Includes -->
