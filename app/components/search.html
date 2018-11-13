@@ -16,14 +16,14 @@
 <div class="container results-box">
     <p class="pre-search">Pesquise por sua música, artista ou álbum favorito!</p>
     <ul>
-        <li ng-repeat="musica in vm.result">
+        <li ng-repeat="musica in vm.result track by musica.trackId">
             <c-music musica="musica"></c-music>
         </li>
     </ul>
 
     <div class="pagination">
         <div>
-            <a ng-repeat="pagina in paginacao" ng-click="loadResults($index)" href="">{{ vm.pagina }}</a>
+            <a ng-repeat="pagina in vm.paginacao" ng-click="vm.loadResults($index)" href="">{{ pagina }}</a>
             <div class="clear"></div>
         </div>
     </div>

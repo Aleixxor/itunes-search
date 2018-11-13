@@ -5,12 +5,15 @@
         const states = [
             {
                 name: 'search',
-                url: '/search?term',
+                url: '/search?term&page',
                 component: 'cSearch',
                 params: {
                     term: {
-                        dynamic: false
+                        dynamic: true
                     }
+                },
+                page: {
+                    dynamic: true
                 }
             },
             {
