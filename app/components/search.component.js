@@ -30,7 +30,6 @@
         };
 
         this.$onDestroy = () => this.deregisterHook();
-
         this.loadResults = _pagina => {
             this.result = _result.slice(_pagina * 10, _pagina * 10 + 10); 
             $state.go('search', {term: this.params.term, page: _pagina--});
