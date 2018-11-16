@@ -1,15 +1,6 @@
-(function () {
-    const app = angular.module('itunesSearch');
-
-    const detail = {
-        templateUrl: 'app/components/detail.html',
-        controller: DetailCtrl,
-        bindings: {
-            $transition$: '<'
-        }
-    };
-
-    function DetailCtrl ($http) {
+class DetailCtrl {
+    constructor($http) {
+        'ngInject';
         let params = {};
 
         this.details = {};
@@ -23,6 +14,12 @@
             $http.get("http://localhost:5000/api/iTunes/search?term=" + params.trackId)
                 .then(res => this.details = res.data.results[0]);
     }
+}
 
-    app.component('cDetail', detail);
-})();
+export const Detail = {
+    template: require('./detail.html'),
+    controller: DetailCtrl,
+    bindings: {
+      $transition$: '<'
+    }
+};
