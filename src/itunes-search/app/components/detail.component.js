@@ -6,7 +6,9 @@ class DetailCtrl {
         this.details = {};
 
         this.$onInit = () => {
+            console.log("Opening detail")
             params = this.$transition$.params();
+            console.log(params)
             loadDetails();
         };
 
